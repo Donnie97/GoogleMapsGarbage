@@ -1,0 +1,74 @@
+body{
+  background-image: url('stars4.gif');  
+}
+.custom-marker {
+background-image: url('isspic.png');
+background-repeat: no-repeat;
+background-size: 20%;
+padding: 15px;
+min-width: 100px;
+filter: brightness(220%);
+color: red;
+font-weight: 600;
+font-size: 16px;
+}
+
+.DivGoogleMap {
+  height: 480px;
+  width: 100%;
+  opacity: 0.5;
+  border-bottom: 5px solid white;
+  border-top: 5px solid white;
+  
+  
+}
+.GoogleMap {
+height: 400px;
+border-radius: 50px;
+}
+.map {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+}
+.header {
+  background: rgba(0, 0, 0, 0);
+  position: static;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 75px;
+  width: 100%;
+}
+
+.international {
+  animation: international-spin infinite 10s linear;
+  height: 70px;
+  margin: 500px auto;
+}
+
+@keyframes international-spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+.spaceNum{
+  display: flex;
+  color: white;
+}
+.actualNum{
+  color: grey;
+}
+footer {
+  background: rgba(0, 0, 0, 0.0);  
+  position: static;
+  display: flex;
+  height: 75px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.iss_position {
+  color: white;
+}
+.interDiv {
+  padding: 40px;
+}

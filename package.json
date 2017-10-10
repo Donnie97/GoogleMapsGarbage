@@ -1,0 +1,32 @@
+{
+  "name": "mini-project-template",
+  "main": "./server/index.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@turf/random": "^4.7.3",
+    "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.1",
+    "google-map-react": "^0.24.0",
+    "immutable": "^3.8.2",
+    "material-ui": "^0.19.4",
+    "nodemon": "^1.12.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-google-maps": "^8.3.5",
+    "react-scripts": "1.0.14"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
