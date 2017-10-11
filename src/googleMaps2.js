@@ -14,31 +14,31 @@ class GoogleMapReactComponent extends PureComponent {
    super()
 
     this.state = {
-      spacePosition: ''
+      spacePosition: {},
+      lat: 0,
+      lng: 0
     }
     this.iss_position = this.iss_position.bind( this )
   }
   componentDidMount = () => {
     this.iss_position()
-   var position = setInterval(() => {this.iss_position()},5000)
+    setInterval(() => this.iss_position(),5000)
   }
   
 iss_position = () =>{
   axios.get('http://localhost:8080/api/space')
   .then(response => {
     this.setState({ 
-      spacePosition: response.data.iss.iss_position
+      spacePosition: response.data.iss.iss_position,
+      //parseFloat is where we went wrong!!!!!!
+      lat: parseFloat(response.data.iss.iss_position.latitude),
+      lng: parseFloat(response.data.iss.iss_position.longitude)
     })
   })
 }
 
   render() {
-    var lat = Math.floor(+this.state.spacePosition.latitude)
-    var lng = Math.floor(+this.state.spacePosition.longitude)
-    
-    var latLng = {lat : lat, lng: lng}
-
-    const GoogleMapsMarkers = markers.map(marker => (
+    var GoogleMapsMarkers = markers.map(marker => (
       <CustomMarker
         key={`marker_${marker.name}`}
         lat={this.state.spacePosition.latitude}
@@ -46,13 +46,11 @@ iss_position = () =>{
         text={'ISS'}
       />
     ));
-    console.log([lat, lng])
-    console.log(this.state.spacePosition)
-    console.log(latLng)
     
     return (
       <GoogleMapReact className='GoogleMap'
-        center={mapConfig.center}
+        
+        center={[this.state.lat, this.state.lng]}
         defaultZoom={mapConfig.zoom}
         mapTypeId={'HYBRID'}
         layerTypes={['TrafficLayer', 'TransitLayer']}

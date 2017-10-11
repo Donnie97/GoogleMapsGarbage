@@ -11,7 +11,7 @@ class App extends Component {
 
     this.state = {
       spaceNum: '',
-    spacePeep: [],
+      spacePeep: [],
       spacePosition: ''
 
     }
@@ -19,7 +19,7 @@ class App extends Component {
   }
   componentDidMount = () => {
     this.iss_position()
-   var position = setInterval(() => {this.iss_position()},5000)
+    setInterval(() => this.iss_position(),5000)
   }
   
 iss_position = () =>{
@@ -60,7 +60,7 @@ iss_position = () =>{
 <GoogleMapReactComponent className = "GoogleMap"/>
 </div>
 </div>
-<footer class= 'footer'>
+<footer className='footer'>
 <div className="iss_position">
         The ISS is currently over {(this.state.spacePosition.longitude)} N, {(this.state.spacePosition.latitude)} E        
         </div>
@@ -68,7 +68,7 @@ iss_position = () =>{
         <div className='spaceNum'>
             
         <div> Currently <br></br></div> 
-        <div className= 'actualNum'> {this.state.spaceNum} <br></br></div>
+        <div className='actualNum'> {this.state.spaceNum} <br></br></div>
 
         <div>people floating in space. </div>
           </div>
