@@ -5,14 +5,14 @@ export function slugify(str) {
   return str.toLowerCase().replace(/\s/g, '-');
 }
 
-export const markers = [
+export var markers = [
   {
     name: 'DevMountain',
     latlng: [40.226294, -111.660776],
   }
 ];
 //DEFAULT CENTER
-export const mapConfig = {
+export var mapConfig = {
   center: [40.2262, -111.6607],
   zoom: 0
 };
